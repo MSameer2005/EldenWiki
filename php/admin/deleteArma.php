@@ -89,6 +89,14 @@ try {
 </header>
 
 <main class="sfondo"><h1 align="center" class="titolo" style="padding-top: 1.5%;">Delete Weapon</h1>
+
+    <?php
+    if (isset($_SESSION['error_message'])) {
+        echo "<script type='text/javascript'>alert('" . $_SESSION['error_message'] . "')</script>";
+        unset($_SESSION['error_message']);
+    }
+    ?>
+
     <form action="../lib/Search.php" method="post" class="form_deleteArma">
         <input type="hidden" name="hiddenVariable" value="deleteArma">
 

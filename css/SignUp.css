@@ -61,3 +61,23 @@
 .form-container button:hover {
     background-color: #d4af377c;
 }
+
+@media (max-width: 768px) {
+    .signup-form {
+        padding: 15px;
+        max-width: 90%;
+    }
+    .signup-form label {
+        font-size: 14px;
+    }
+    .signup-form input,
+    .signup-form select,
+    .signup-form textarea {
+        font-size: 14px;
+    }
+    .signup-form button {
+        font-size: 1em;
+        padding: 10px;
+        width: 100%;
+    }
+}

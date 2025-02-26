@@ -19,3 +19,14 @@
     margin-right: 10px;
     background-size: cover;
 }
+
+@media (max-width: 768px) {
+    .lore-container {
+        padding: 10px;
+        font-size: 14px;
+    }
+    .lore-image {
+        max-width: 100%;
+        height: auto;
+    }
+}

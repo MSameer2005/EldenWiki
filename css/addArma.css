@@ -54,23 +54,6 @@
     resize: vertical;
 }
 
-/* Miglioramento responsive */
-@media (max-width: 768px) {
-    .form_addArma {
-        padding: 15px;
-    }
-
-    .form_addArma input,
-    .form_addArma select,
-    .form_addArma textarea {
-        font-size: 13px;
-    }
-
-    .form_addArma button {
-        font-size: 1em;
-    }
-}
-
 /* Form 2 */
 /* Stili per il form_addArma_2 */
 .form_addArma_2 {
@@ -190,4 +173,135 @@
 .form-disabled {
     opacity: 0.75;
     pointer-events: none; /* Disabilita l'interazione con gli elementi del form */
+}
+
+/* updateArma.css */
+/* Container della sezione unificata */
+.update-arma-section .scaling-requisites {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+/* Ogni coppia (Scaling + Requisito) viene visualizzata su una riga */
+.update-arma-section .scaling-requisites .scaling-item {
+    flex: 1 1 45%;
+    display: flex;
+    align-items: center;
+}
+
+/* Etichette all’interno di ciascuna coppia */
+.update-arma-section .scaling-requisites .scaling-item label {
+    width: 30%;
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+/* Controlli (select e input) all’interno di ciascuna coppia */
+.update-arma-section .scaling-requisites .scaling-item select,
+.update-arma-section .scaling-requisites .scaling-item input[type="number"] {
+    width: 65%;
+    padding: 8px;
+    /*
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background: #333;
+    color: #fff;
+    */
+}
+
+@media (max-width: 768px) {
+    .form_addArma {
+        padding: 15px;
+    }
+    .form_addArma input,
+    .form_addArma select,
+    .form_addArma textarea {
+        font-size: 13px;
+    }
+    .form_addArma button {
+        font-size: 1em;
+    }
+}
+
+@media (max-width: 480px) {
+    .form_addArma {
+        max-width: 90%;
+        padding: 10px;
+    }
+    .form_addArma label {
+        font-size: 12px;
+    }
+    .form_addArma input,
+    .form_addArma select,
+    .form_addArma textarea {
+        font-size: 12px;
+    }
+    .form_addArma button {
+        font-size: 0.9em;
+        padding: 8px 15px;
+    }
+}
+
+@media (max-width: 768px) {
+    .form_addArma_2 {
+        padding: 15px;
+    }
+    .form_addArma_2 .form-group {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .form_addArma_2 .form-group label {
+        width: 100%;
+        margin-bottom: 5px;
+    }
+    .form_addArma_2 .form-group input {
+        width: 100%;
+    }
+    .form_addArma_2 button {
+        font-size: 1em;
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .form_addArma_2 {
+        max-width: 90%;
+        padding: 10px;
+    }
+    .form_addArma_2 .form-group label {
+        font-size: 12px;
+    }
+    .form_addArma_2 .form-group input {
+        font-size: 12px;
+    }
+    .form_addArma_2 button {
+        font-size: 0.9em;
+        padding: 8px 15px;
+    }
+}
+
+@media (max-width: 600px) {
+    .update-arma-section .scaling-requisites .scaling-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .update-arma-section .scaling-requisites .scaling-item label,
+    .update-arma-section .scaling-requisites .scaling-item select,
+    .update-arma-section .scaling-requisites .scaling-item input[type="number"] {
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 5px;
+    }
+}
+
+@media (max-width: 480px) {
+    .update-arma-section .scaling-requisites {
+        gap: 10px;
+        margin-bottom: 15px;
+    }
+    .update-arma-section .scaling-requisites .scaling-item {
+        flex: 1 1 100%;
+    }
 }

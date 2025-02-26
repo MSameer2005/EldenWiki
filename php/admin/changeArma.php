@@ -73,6 +73,14 @@ try {
 </header>
 
 <main class="sfondo"><h1 align="center" class="titolo" style="padding-top: 1.5%;">Update Weapon</h1>
+
+    <?php
+    if (isset($_SESSION['error_message'])) {
+        echo "<script type='text/javascript'>alert('" . $_SESSION['error_message'] . "')</script>";
+        unset($_SESSION['error_message']);
+    }
+    ?>
+
     <form action="../lib/Search.php" method="post" class="form_deleteArma">
         <input type="hidden" name="hiddenVariable" value="changeArma">
 
@@ -131,7 +139,7 @@ try {
                         <td>
                             <form action='updateArma.php' method='post'>
                                 <input type='hidden' name='id_arma' value='{$row['id']}'>
-                                <button type='submit' id='deleteFilter'>Update</button>
+                                <button type='submit' id='deleteFilter'>Update" . $row['id'] . "</button>
                             </form>
                         </td>
                     </tr>";

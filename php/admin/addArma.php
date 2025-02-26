@@ -25,6 +25,15 @@ require_once __DIR__ . '/../lib/config.php';
     <title>Add Weapons</title>
     <link href="../../img/EldenRing-Simbolo.png" rel="icon" type="image/png">
     <link href="../../css/style.css" rel="stylesheet">
+    <script>
+        function confirmInsert(form) {
+            if (confirm("Vuoi procedere con l'aggiornamento?")) {
+                form.submit();
+            } else {
+                alert("Operazione annullata!");
+            }
+        }
+    </script>
 </head>
 <body>
 
@@ -108,7 +117,7 @@ require_once __DIR__ . '/../lib/config.php';
             <input type="number" id="effetto-valore" name="effetto-valore" min="0" step="1">
         </div>
 
-        <button type="submit">Next</button>
+        <button type="submit" onclick="confirmInsert(this.form)">Next</button>
     </form>
 
     <!-- Form 2 -->
@@ -271,7 +280,7 @@ require_once __DIR__ . '/../lib/config.php';
             </div>
         </div>
 
-        <button type="submit">Finish</button>
+        <button type="submit" onclick="confirmInsert(this.form)">Finish</button>
     </form>
 
 </body>

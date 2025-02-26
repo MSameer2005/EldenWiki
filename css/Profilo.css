@@ -57,3 +57,16 @@
     background-color: white;
     color: #D4AF37;
 }
+
+@media (max-width: 768px) {
+    .profile-container {
+        padding: 10px;
+    }
+    .profile-image {
+        width: 80px;
+        height: 80px;
+    }
+    .profile-details {
+        font-size: 14px;
+    }
+}

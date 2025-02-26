@@ -25,3 +25,14 @@
     margin-right: 10px;
     background-size: cover;
 }
+
+@media (max-width: 768px) {
+    .walkthrough-container {
+        padding: 10px;
+        font-size: 14px;
+    }
+    .walkthrough-image {
+        max-width: 100%;
+        height: auto;
+    }
+}

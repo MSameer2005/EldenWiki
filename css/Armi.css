@@ -346,3 +346,25 @@ td.Scaling {
         border: 1px solid #ccc;
     }
 }
+
+@media (max-width: 768px) {
+    /* Riduci le dimensioni del testo e degli spazi nelle tabelle */
+    table {
+        font-size: 14px;
+    }
+    .weapon-container2 {
+        flex-direction: column;
+        align-items: center;
+    }
+    .weapon-image {
+        max-width: 100%;
+        height: auto;
+    }
+}
+
+@media (max-width: 480px) {
+    table {
+        font-size: 12px;
+    }
+}
+
