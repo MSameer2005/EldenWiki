@@ -1,0 +1,32 @@
+/* Header */
+@import "Header.css";
+
+/* Body */
+@import "Body.css";
+
+/* Home.php */
+@import "Home.css";
+
+/* Armi.php */
+@import "Armi.css";
+
+/* Lore.php */
+@import "Lore.css";
+
+/* Walkthrough.html */
+@import "Walkthrough.css";
+
+/* SignUp.php */
+@import "SignUp.css";
+
+/* Profile.php */
+@import "Profilo.css";
+
+/* addArma.php */
+@import "addArma.css";
+
+/* Contacts.php */
+@import "Contacts.css";
+
+/* deleteArma.php */
+@import "deleteArma.css";

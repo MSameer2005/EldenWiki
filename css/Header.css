@@ -1,0 +1,89 @@
+/* Stili per header, sezioni con sfondo e footer */
+header,
+.sfondo,
+footer {
+    margin: 0 2%;
+    background-color: rgba(0, 0, 0, 0.664);
+    color: white;
+}
+
+/* Stili specifici per header */
+header h1 {
+    text-align: center;
+    padding-top: 1.5%;
+    font-size: 200%;
+    color: #D4AF37;
+    text-decoration: none;
+}
+
+header a {
+    text-decoration: none;
+}
+
+header ul {
+    padding-bottom: 1.5%;
+    font-size: 120%;
+}
+
+/* Stile per il menu */
+.menu,
+ul {
+    list-style-type: none;
+    padding: 0;
+    text-align: center;
+}
+
+.menu li {
+    display: inline;
+    margin: 0 15px;
+    cursor: pointer;
+}
+
+.menu a {
+    color: #D4AF37;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Stili per i dropdown nel menu */
+.dropbtn {
+    font-size: 120%;
+    color: #D4AF37;
+    background-color: unset;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    font-size: inherit;
+    display: none;
+    position: absolute;
+    z-index: 1;
+}
+
+.dropdown-content a {
+    text-decoration: none;
+    display: block;
+    background-color: #D4AF37;
+    color: white;
+    padding: 7% 2%;
+    width: 150%;
+}
+
+.dropdown-content a:hover {
+    background-color: rgba(0, 0, 0, 0.664);
+    color: white;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Stili per il titolo */
+.titolo {
+    font-size: 175%;
+    color: white;
+}

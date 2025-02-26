@@ -1,0 +1,193 @@
+/* Stile per il form .form_addArma */
+.form_addArma {
+    display: flex;
+    flex-direction: column;
+    max-width: 600px;
+    margin: auto;
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid #D4AF37;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Label del form */
+.form_addArma label {
+    margin-top: 10px;
+    font-weight: bold;
+    font-size: 14px;
+    color: white;
+}
+
+/* Campi input, select e textarea */
+.form_addArma input,
+.form_addArma select,
+.form_addArma textarea {
+    padding: 10px;
+    margin: 5px 0 15px 0;
+    font-size: 14px;
+    color: black;
+    background-color: white;
+    border: 1px solid #555;
+    border-radius: 5px;
+}
+
+/* Pulsante del form */
+.form_addArma button {
+    padding: 10px 20px;
+    font-size: 1.2em;
+    background-color: #D4AF37;
+    color: black;
+    border: 1px solid #D4AF37;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.form_addArma button:hover {
+    background-color: rgba(0, 0, 0, 0.9);
+    color: #D4AF37;
+}
+
+/* Sezione textarea */
+.form_addArma textarea {
+    height: 100px;
+    resize: vertical;
+}
+
+/* Miglioramento responsive */
+@media (max-width: 768px) {
+    .form_addArma {
+        padding: 15px;
+    }
+
+    .form_addArma input,
+    .form_addArma select,
+    .form_addArma textarea {
+        font-size: 13px;
+    }
+
+    .form_addArma button {
+        font-size: 1em;
+    }
+}
+
+/* Form 2 */
+/* Stili per il form_addArma_2 */
+.form_addArma_2 {
+    display: flex;
+    flex-direction: column;
+    max-width: 600px;
+    margin: auto;
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid #D4AF37;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Titoli delle sezioni del form */
+.form_addArma_2 h3 {
+    font-size: 18px;
+    color: #D4AF37;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #D4AF37;
+    padding-bottom: 5px;
+}
+
+/* Gruppi di input nel form */
+.form_addArma_2 .form-group {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.form_addArma_2 .form-group label {
+    font-size: 14px;
+    font-weight: bold;
+    color: white;
+    width: 30%;
+}
+
+.form_addArma_2 .form-group input {
+    padding: 8px;
+    width: 60%;
+    font-size: 14px;
+    color: black;
+    border: 1px solid #555;
+    border-radius: 5px;
+    background-color: white;
+}
+
+/* Pulsante del form */
+.form_addArma_2 button {
+    padding: 10px 20px;
+    font-size: 1.2em;
+    background-color: #D4AF37;
+    color: black;
+    border: 1px solid #D4AF37;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.form_addArma_2 button:hover {
+    background-color: rgba(0, 0, 0, 0.9);
+    color: #D4AF37;
+}
+
+/* Sezioni del form */
+.form_addArma_2 .form-section {
+    margin-bottom: 20px;
+    padding: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+/* Sezioni speciali */
+.form_addArma_2 .scaling, .form_addArma_2 .requires {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+}
+
+.form_addArma_2 .scaling div,
+.form_addArma_2 .requires div {
+    display: flex;
+    flex-direction: column;
+}
+
+.form_addArma_2 .scaling div label,
+.form_addArma_2 .requires div label {
+    font-size: 14px;
+    font-weight: bold;
+    color: white;
+    margin-bottom: 5px;
+}
+
+.form_addArma_2 .scaling div input,
+.form_addArma_2 .requires div input {
+    padding: 8px;
+    font-size: 14px;
+    color: black;
+    border: 1px solid #555;
+    border-radius: 5px;
+    background-color: white;
+}
+
+.form_addArma_2 .scaling div select {
+    padding: 10px;
+    margin: 5px 0 15px 0;
+    font-size: 12px;
+    color: black;
+    background-color: white;
+    border: 1px solid #555;
+    border-radius: 5px;
+}
+
+/* Disabilitare i form */
+.form-disabled {
+    opacity: 0.75;
+    pointer-events: none; /* Disabilita l'interazione con gli elementi del form */
+}

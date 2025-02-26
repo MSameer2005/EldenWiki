@@ -1,0 +1,348 @@
+/* Stili per la tabella */
+table {
+    margin: 20px auto;
+    width: auto;
+    border-collapse: collapse;
+    text-align: left;
+    background-color: rgba(0, 0, 0, 0.4);
+    color: white;
+    overflow: auto;
+}
+
+tr,
+th,
+td,
+#table-body {
+    padding: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    text-align: center;
+}
+
+/* Stili per le intestazioni della tabella */
+
+th {
+    background-color: #D4AF37;
+    color: black;
+    font-size: 1.2em;
+}
+
+/* Stili per le celle della tabella */
+
+td {
+    font-size: 120%;
+    line-height: 1.5;
+    height: fit-content;
+}
+
+/* Stile per la colonna Arma */
+
+/* Stili per l'immagine dell'arma */
+
+.weapon-image {
+    display: block;
+    height: auto;
+    align-items: center;
+    border: none;
+    margin-top: 50%;
+    margin-bottom: 50%;
+    cursor: pointer;
+}
+
+.effetto-image {
+    padding-left: 15%;
+    display: block;
+    height: auto;
+    align-items: center;
+    border: none;
+}
+
+.effetto-container {
+    width: 10%;
+}
+
+/* Stili per il nome dell'arma */
+
+.weapon-name {
+    font-size: 120%;
+    top: 50%;
+    left: 50%;
+    color: #D4AF37;
+    font-family: spectral, fallback, Helvetica, Arial, sans-serif;
+}
+
+/* Stili per la colonna Descrizione */
+.descrizione {
+    text-align: left;
+}
+
+/* Stili per la colonna categoria */
+.categoria {
+    width: 6%;
+}
+
+/* Stili per la colonna ottenimento */
+.ottenimento {
+    text-align: left;
+}
+
+/* Stili per le colonne Attacco e Difesa */
+.attacco,
+.difesa {
+    width: 8%;
+}
+
+/* Stili per le colonne requisiti e scaling */
+th.requisiti,
+td.requisiti {
+    width: 8.5%;
+}
+
+/* Stili per la colonna Scaling */
+th.Scaling,
+td.Scaling {
+    width: 9%;
+}
+
+/*  */
+
+/* Stili per la forma rettangolare a scomparsa */
+.side-form {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.9);
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+.side-form .search-container {
+    margin: 20px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+.side-form .close-btn {
+    position: absolute;
+    top: 10px;
+    right: 25px;
+    font-size: 36px;
+    color: #D4AF37;
+    cursor: pointer;
+}
+
+#openFormButton {
+    padding: 10px 40px;
+    background-color: #D4AF37;
+    color: black;
+    border: 1px solid #D4AF37;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: spectral, fallback, Helvetica, Arial, sans-serif;
+    font-size: 1.2em;
+}
+
+#openFormButton:hover {
+    background-color: rgba(0, 0, 0, 0.9);
+    color: #D4AF37;
+}
+
+#deleteFilter {
+    margin-left: 1%;
+    padding: 10px 40px;
+    background-color: #D4AF37;
+    color: black;
+    border: 1px solid #D4AF37;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: spectral, fallback, Helvetica, Arial, sans-serif;
+    font-size: 1.2em;
+}
+
+#deleteFilter:hover {
+    background-color: rgba(0, 0, 0, 0.9);
+    color: #D4AF37;
+}
+
+.contenitoreFiltro {
+    display: flex;
+    justify-content: flex-end; /* Allinea i pulsanti a destra */
+    align-items: center; /* Mantiene i pulsanti alla stessa altezza */
+    gap: 10px; /* Spazio tra i pulsanti */
+    margin-right: 2%; /* Spaziatura rispetto al bordo destro */
+}
+
+.search-container input[type="search"],
+.search-container input[type="number"],
+.search-container input[type="password"],
+.search-container select,
+.search-container option {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #D4AF37;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+/* Filter cntainer */
+
+#search-container {
+    padding: 5% 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 400px;
+    background-color: rgba(212, 175, 55, 0.10);
+}
+
+.search-container label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    display: block;
+    color: rgba(212, 175, 55);
+}
+
+/* Stili per la barra di navigazione superiore e il form di ricerca */
+.topnav {
+    overflow: hidden;
+}
+
+.topnav .search-container {
+    float: right;
+    padding-right: 2%;
+}
+
+.topnav input[type=text] {
+    padding: 5px;
+    margin-top: 8px;
+    font-size: 1.2em;
+    line-height: 1.5;
+    border: none;
+}
+
+.topnav .search-container button {
+    float: right;
+    padding: 6px 15px;
+    margin-top: 8px;
+    margin-right: 16px;
+    background: none;
+    font-size: 1.2em;
+    line-height: 1.5;
+    border: none;
+    cursor: pointer;
+}
+
+.search-container button {
+    background-color: transparent;
+    box-shadow: none;
+    margin-left: 45%;
+}
+
+#deleteFilter a {
+    color: black;
+    font-weight: normal;
+    text-decoration: none;
+}
+
+#deleteFilter:hover a {
+    background-color: black;
+    color: #D4AF37;
+}
+
+/* Modal container */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 60px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0); /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.9); /* Black w/ opacity */
+}
+
+/* Modal content (image) */
+.modal-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+}
+
+/* Close button */
+.close {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Paginazione */
+.pagination {
+    font-size: 20px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.pagination a, .pagination strong {
+    display: inline-block;
+    margin: 0 5px;
+    text-decoration: none;
+    color: rgba(212, 175, 55, 0.8); /* Colore per i link e i numeri */
+}
+
+.pagination a:hover {
+    text-decoration: underline;
+}
+
+.pagination strong {
+    color: #D4AF37; /* Colore per il numero corrente */
+    font-weight: bold;
+}
+
+.pagination a:first-child {
+    margin-right: 10px;
+}
+
+.pagination a:last-child {
+    margin-left: 10px;
+}
+
+@media screen and (max-width: 600px) {
+    .topnav .search-container {
+        float: none;
+    }
+
+    .topnav a, .topnav input[type=text], .topnav .search-container button {
+        float: none;
+        display: block;
+        text-align: left;
+        width: 100%;
+        margin: 0;
+        padding: 14px;
+    }
+
+    .topnav input[type=text] {
+        border: 1px solid #ccc;
+    }
+}

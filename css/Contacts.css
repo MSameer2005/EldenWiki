@@ -1,0 +1,39 @@
+/* Sezione contatti */
+.contact-info {
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    margin: 20px auto 0;
+    border-radius: 8px;
+    color: white;
+    text-align: left;
+    width: 80%;
+}
+
+.contact-info h3 {
+    font-size: 1.5em;
+    margin-bottom: 15px;
+    color: #D4AF37; /* Colore dorato per il titolo */
+}
+
+.contact-info ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.contact-info li {
+    font-size: 1.1em;
+    margin-bottom: 10px;
+}
+
+.contact-info li strong {
+    color: #D4AF37; /* Colore dorato per le etichette */
+}
+
+.contact-info a {
+    color: #D4AF37;
+    text-decoration: none;
+}
+
+.contact-info a:hover {
+    text-decoration: underline;
+}
