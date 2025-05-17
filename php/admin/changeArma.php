@@ -139,7 +139,7 @@ try {
                         <td>
                             <form action='updateArma.php' method='post'>
                                 <input type='hidden' name='id_arma' value='{$row['id']}'>
-                                <button type='submit' id='deleteFilter'>Update" . $row['id'] . "</button>
+                                <button type='submit' id='deleteFilter'>Update</button>
                             </form>
                         </td>
                     </tr>";
