@@ -1,6 +1,6 @@
-/* Sign Up Form Styles */
+/* Login Form Styles */
 .form-container {
-    max-width: 500px;
+    max-width: 400px;
     margin: 0 auto;
     padding: 20px;
     background-color: rgba(0, 0, 0, 0.7);
@@ -26,8 +26,7 @@
     margin-bottom: 5px;
 }
 
-.form-group input,
-.form-group select {
+.form-group input {
     width: 100%;
     padding: 10px;
     border-radius: 5px;
@@ -36,24 +35,9 @@
     color: #fff;
 }
 
-.form-group input:focus,
-.form-group select:focus {
+.form-group input:focus {
     outline: none;
     border-color: #D4AF37;
-}
-
-.form-group.checkbox {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.form-group.checkbox input {
-    width: auto;
-}
-
-.form-group.checkbox label {
-    margin-bottom: 0;
 }
 
 .form-container button {
@@ -120,24 +104,4 @@
 
 .toggle-password:hover {
     opacity: 0.8;
-}
-
-@media (max-width: 768px) {
-    .signup-form {
-        padding: 15px;
-        max-width: 90%;
-    }
-    .signup-form label {
-        font-size: 14px;
-    }
-    .signup-form input,
-    .signup-form select,
-    .signup-form textarea {
-        font-size: 14px;
-    }
-    .signup-form button {
-        font-size: 1em;
-        padding: 10px;
-        width: 100%;
-    }
-}
+} 

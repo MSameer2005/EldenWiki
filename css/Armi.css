@@ -110,7 +110,7 @@ td.Scaling {
     height: 100%;
     width: 0;
     position: fixed;
-    z-index: 1;
+    z-index: 1001; /* Higher than navbar's z-index */
     top: 0;
     right: 0;
     background-color: rgba(0, 0, 0, 0.9);

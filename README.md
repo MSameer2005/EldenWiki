@@ -14,6 +14,10 @@ The **Elden Ring Wiki Project** is a web-based platform designed to serve as a c
 - **User Authentication**: Secure login and registration system with role-based access for administrators.
 - **Search and Filtering**: Advanced filtering and search functionality to quickly find specific information.
 - **Admin Panel**: CRUD functionalities for managing database entries, allowing admins to add, update, and delete weapons and other in-game elements.
+- **Responsive Design**: Mobile-friendly interface with adaptive layouts for all screen sizes.
+- **Interactive UI**: Modern user interface with smooth animations and transitions.
+- **Password Security**: Enhanced password fields with visibility toggle and confirmation validation.
+- **Dynamic Content Loading**: Efficient content loading with pagination and filtering options.
 
 ## Project Structure
 
@@ -21,24 +25,51 @@ The project follows a structured MVC (Model-View-Controller) approach and is org
 
 ```
 ├── css/                # Stylesheets for UI/UX
-├── html/               # Static HTML pages
-├── img/                # Images and multimedia assets
-├── js/                 # JavaScript for frontend interactions
-├── php/                # Core backend functionality
-│   ├── admin/          # Admin panel for managing content
-│   ├── lib/            # Utility scripts and configurations
-├── sql/                # Database schema and queries
-│   ├── db/             # SQL dump files
-│   ├── scripts/        # Database creation and modification scripts
+│   ├── Header.css      # Navigation and header styles
+│   ├── Body.css        # Main content styles
+│   ├── LogIn.css       # Login page styles
+│   ├── SignUp.css      # Registration page styles
+│   ├── Armi.css        # Weapons page styles
+│   ├── weapon_details.css # Weapon details styles
+│   └── ...            # Other component-specific styles
+├── php/               # Core backend functionality
+│   ├── admin/         # Admin panel for managing content
+│   ├── lib/           # Utility scripts and configurations
+│   ├── Home.php       # Homepage controller
+│   ├── LogIn.php      # Login controller
+│   ├── SignUp.php     # Registration controller
+│   ├── Armi.php       # Weapons controller
+│   └── ...           # Other page controllers
+├── js/                # JavaScript for frontend interactions
+├── img/               # Images and multimedia assets
+├── sql/               # Database schema and queries
+│   ├── db/            # SQL dump files
+│   └── scripts/       # Database creation and modification scripts
 ```
 
 ## Technologies Used
 
-- **Frontend**: HTML, CSS, JavaScript
-- **Backend**: PHP (Object-Oriented)
-- **Database**: MySQL
-- **Frameworks/Libraries**: None (custom-built architecture)
-- **Security**: Session-based authentication, prepared SQL statements to prevent SQL injection
+- **Frontend**: 
+  - HTML5
+  - CSS3 (with modern features like Flexbox and Grid)
+  - JavaScript (ES6+)
+  - SVG for icons and graphics
+- **Backend**: 
+  - PHP 7.4+ (Object-Oriented)
+  - PDO for database connections
+  - Session-based authentication
+- **Database**: 
+  - MySQL
+  - Prepared statements for security
+- **Security Features**:
+  - Password hashing with BCRYPT
+  - SQL injection prevention
+  - XSS protection
+  - CSRF protection
+- **Development Tools**:
+  - Git for version control
+  - VS Code integration
+  - AMPPS for local development
 
 ## Installation & Setup
 
@@ -47,6 +78,7 @@ The project follows a structured MVC (Model-View-Controller) approach and is org
 - Apache Web Server (e.g., XAMPP, WAMP, or LAMP)
 - PHP 7.4+
 - MySQL Database
+- AMPPS (recommended for local development)
 
 ### Steps to Run the Project
 
@@ -61,6 +93,26 @@ The project follows a structured MVC (Model-View-Controller) approach and is org
    - Place the project folder inside your local web server's root directory (e.g., `htdocs` for XAMPP, `www` for AMPPS).
    - Start Apache and MySQL.
    - Access the website via `http://localhost/eldenring-wiki/`
+
+## User Interface Features
+
+- **Modern Navigation**: Responsive navigation bar with dropdown menus
+- **Dynamic Forms**: Interactive forms with real-time validation
+- **Password Management**: Secure password fields with visibility toggle
+- **Responsive Tables**: Sortable and filterable data tables
+- **Modal Dialogs**: Interactive popups for detailed information
+- **Loading States**: Visual feedback for async operations
+- **Error Handling**: User-friendly error messages and notifications
+
+## Security Features
+
+- **Authentication**: Secure login and registration system
+- **Authorization**: Role-based access control
+- **Data Protection**: Encrypted password storage
+- **Input Validation**: Server-side and client-side validation
+- **Session Management**: Secure session handling
+- **SQL Injection Prevention**: Prepared statements
+- **XSS Protection**: Output escaping and sanitization
 
 ## Contributions
 

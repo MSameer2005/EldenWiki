@@ -95,6 +95,7 @@ try {
 
 <main class="sfondo">
     <div class="form-container">
+        <h1>Sign Up</h1>
         <?php
         if (isset($_SESSION['error_message'])) {
             $errorMessage = $_SESSION['error_message'];
@@ -103,34 +104,76 @@ try {
         }
         ?>
         <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
-            <label for="nickname">Nickname:</label>
-            <input id="nickname" name="nickname" required type="text">
-
-            <div class="gender-container">
-                <label>Sex:</label><br>
-                <input id="Maschio" name="sesso" required type="radio" value="M">
-                <label for="Maschio">Male</label>
-                <input id="Femmina" name="sesso" required type="radio" value="F">
-                <label for="Femmina">Female</label>
+            <div class="form-group">
+                <label for="nickname">Nickname:</label>
+                <input type="text" id="nickname" name="nickname" required>
             </div>
-
-            <label for="email">Email:</label>
-            <input id="email" name="email" required type="email">
-
-            <label for="password">Password:</label>
-            <input id="password" name="password" required type="password" minlength="8">
-
-            <label for="isAdmin">Is Admin</label>
-            <input id="isAdmin" name="isAdmin" type="checkbox">
-
+            <div class="form-group">
+                <label for="gender">Gender:</label>
+                <select id="gender" name="gender" required>
+                    <option value="M">Male</option>
+                    <option value="F">Female</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <div class="password-container">
+                    <input type="password" id="password" name="password" required>
+                    <i class="toggle-password" onclick="togglePassword('password')">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                            <circle cx="12" cy="12" r="3"></circle>
+                        </svg>
+                    </i>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="confirm_password">Confirm Password:</label>
+                <div class="password-container">
+                    <input type="password" id="confirm_password" name="confirm_password" required>
+                    <i class="toggle-password" onclick="togglePassword('confirm_password')">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                            <circle cx="12" cy="12" r="3"></circle>
+                        </svg>
+                    </i>
+                </div>
+            </div>
+            <div class="form-group checkbox">
+                <input type="checkbox" id="isAdmin" name="isAdmin">
+                <label for="isAdmin">Admin</label>
+            </div>
             <button type="submit">Sign Up</button>
         </form>
+        <p>Already have an account? <a href="LogIn.php">Login</a></p>
     </div>
 </main>
 
 <footer class="sfondo">
     <p>&copy; 2022 Elden Ring. All rights herein are reserved.</p>
 </footer>
+
+<script>
+function togglePassword(inputId) {
+    const input = document.getElementById(inputId);
+    const type = input.getAttribute('type') === 'password' ? 'text' : 'password';
+    input.setAttribute('type', type);
+}
+
+document.querySelector('form').addEventListener('submit', function(e) {
+    const password = document.getElementById('password').value;
+    const confirmPassword = document.getElementById('confirm_password').value;
+    
+    if (password !== confirmPassword) {
+        e.preventDefault();
+        alert('Passwords do not match!');
+    }
+});
+</script>
 </body>
 
 </html>

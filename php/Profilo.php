@@ -14,6 +14,7 @@ if (!$isLogged) {
     <link href="../img/EldenRing-Simbolo.png" rel="icon" type="image/png">
     <title>Profilo Utente</title>
     <link href="../css/style.css" rel="stylesheet">
+    <link href="../css/Profilo.css" rel="stylesheet">
 </head>
 <body>
 <div class="myVideo">
@@ -46,37 +47,22 @@ if (!$isLogged) {
     <div class="header-buttons">
         <img alt="Profilo" onclick="window.location.href='Profilo.php'"
              src="<?php echo "../" . $_SESSION['profilePicture']; ?>"
-             style="border-radius: 50%"
+             class="profile-icon"
              width="60px">
     </div>
 </header>
 
 <main class="sfondo">
     <div class="profile-container">
-
-        <?php
-        if ($_SESSION['isLogged']) {
-            // Mostra i dettagli del profilo
-            echo "<div class='profile'>
-                            <img src='../" . $_SESSION['profilePicture'] . "' alt='Immagine profilo' class='profile-image'>
-                            <div class='profile-details'>
-                                <h2>Profilo Utente</h2>
-                                <p><strong>Nickname:</strong> " . $_SESSION['nickname'] . "</p>
-                                <p><strong>Email:</strong> " . $_SESSION['email'] . "</p>
-                                <!--<button>Cambia Password</button>-->
-                            </div>
-                                <form action='../php/lib/Logout.php' method='post'>
-                                    <button class='profile-buttons' type='submit'>Log out</button>
-                                </form>
-                        </div>";
-        } else {
-            $_SESSION['error_message'] = "Errore: Email o Password sbagliata";
-            header('Location: ../php/Login.php');
-            exit();
-        }
-
-        ?>
-
+        <div class="profile-image">
+            <img src="<?php echo "../" . $_SESSION['profilePicture']; ?>" alt="Profile Picture">
+        </div>
+        <div class="profile-details">
+            <h2><?php echo $_SESSION['nickname']; ?></h2>
+            <p><?php echo $_SESSION['email']; ?></p>
+            <p>Role: <?php echo $_SESSION['isAdmin'] ? 'Admin' : 'User'; ?></p>
+        </div>
+        <button onclick="window.location.href='lib/LogOut.php'">Logout</button>
     </div>
 </main>
 

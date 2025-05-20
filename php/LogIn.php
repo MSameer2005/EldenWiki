@@ -68,6 +68,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 <main class="sfondo">
     <div class="form-container">
+        <h1>Login</h1>
         <?php
         if (isset($_SESSION['error_message'])) {
             $errorMessage = $_SESSION['error_message'];
@@ -76,20 +77,38 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
         ?>
         <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
-
-            <label for="email">Email:</label>
-            <input id="email" name="email" required type="email">
-
-            <label for="password">Password:</label>
-            <input id="password" name="password" required type="password" minlength="8">
-
-            <button type="submit">Log In</button>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <div class="password-container">
+                    <input type="password" id="password" name="password" required>
+                    <i class="toggle-password" onclick="togglePassword('password')">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                            <circle cx="12" cy="12" r="3"></circle>
+                        </svg>
+                    </i>
+                </div>
+            </div>
+            <button type="submit">Login</button>
         </form>
+        <p>Don't have an account? <a href="SignUp.php">Sign Up</a></p>
     </div>
 </main>
 
 <footer class="sfondo">
     <p>&copy; 2022 Elden Ring. All rights herein are reserved.</p>
 </footer>
+
+<script>
+function togglePassword(inputId) {
+    const input = document.getElementById(inputId);
+    const type = input.getAttribute('type') === 'password' ? 'text' : 'password';
+    input.setAttribute('type', type);
+}
+</script>
 </body>
 </html>

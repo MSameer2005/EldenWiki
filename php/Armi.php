@@ -114,123 +114,47 @@ try {
     </div>
 
     <div id="sideForm" class="side-form">
-
         <span id="closeFormButton" class="close-btn">&times;</span>
-
         <div class="search-container">
-
             <form action="lib/Search.php" method="post">
                 <input type="hidden" name="hiddenVariable" value="Armi">
-
                 <label for="search">Name:</label>
                 <input type="search" placeholder="Search.." name="search">
-
                 <label for="categoria">Weapons Types:</label>
                 <select id="categoria" name="categoria">
                     <option value="">ALL</option>
                     <?php echo generateOptions("Categorie") ?>
                 </select>
-
-
                 <label for="attacco">Attack:</label>
                 <input id="attacco" name="attacco" type="number" min="0" step="1">
-
                 <label for="effetto-passivo">Passive:</label>
                 <select id="effetto-passivo" name="effetto-passivo">
                     <option value="-">-</option>
                     <?php echo generateOptions("Effetti") ?>
                 </select>
-
                 <button type="submit"><img src="../img/Icon/SearchBar.png" class="fa fa-search" width="30px"></button>
             </form>
-
         </div>
     </div>
 
     <script src="../js/sideForm.js"></script>
 
-    <div style="overflow-x:auto;">
-        <table id="csv-table">
-            <thead>
-            <tr>
-                <th>Weapon</th>
-                <th>Weapons Type</th>
-                <th>Description</th>
-                <th>Attack</th>
-                <th>Defense</th>
-                <th>Attributes</th>
-                <th>Requirement</th>
-                <th>Weight</th>
-                <th>Passive</th>
-                <th>How to Obtain</th>
-            </tr>
-            </thead>
-            <tbody id="table-body">
-            <?php
-            if (isset($errorMessage)) {
-                /*echo "<script type='text/javascript'>alert('$errorMessage');</script>";*/
-                echo "<tr><td colspan='10'><img src='../img/error-404.jpg'></br>" . $errorMessage . "</td></tr>";
-            } elseif (count($result) > 0) {
-                foreach ($result as $row) {
-                    $attacco = explode(',', $row['attacco']);
-                    $difesa = explode(',', $row['difesa']);
-                    $scaling = explode(',', $row['scaling']);
-                    $requisiti = explode(',', $row['requisiti']);
-                    $effetto_passivo = explode('<br>', $row['effetto_passivo']);
-
-                    // Inizializza valori vuoti per icona_effetto e nome_effetto
-                    $icona_effetto = '';
-                    $nome_effetto = '';
-
-                    echo "<tr>
-                    <td class='weapon-container'>
-                        <img src='" . $row['immagine'] . "' class='weapon-image'>
-                        <span class='weapon-name'>" . $row['nome_arma'] . "</span>
-                    </td>
-                    <td class='categoria'>" . $row['categoria'] . "</td>
-                    <td class='descrizione'>" . $row['descrizione'] . "</td>
-                    <td class='attacco'><p>";
-                    for ($i = 0; $i < count($attacco); $i++) {
-                        echo $attacco[$i] . "</br>";
-                    }
-                    echo "</p></td>
-                    <td class='difesa'><p>";
-                    for ($i = 0; $i < count($difesa); $i++) {
-                        echo $difesa[$i] . "</br>";
-                    }
-                    echo "</p></td>
-                    <td class='scaling'><p>";
-                    for ($i = 0; $i < count($scaling); $i++) {
-                        echo $scaling[$i] . "</br>";
-                    }
-                    echo "</p></td>
-                    <td class='requisiti'><p>";
-                    for ($i = 0; $i < count($requisiti); $i++) {
-                        echo $requisiti[$i] . "</br>";
-                    }
-                    echo "</p></td>
-                    <td>" . $row["peso"] . "</td>";
-                    if (count($effetto_passivo) >= 2) {
-                        $icona_effetto = $effetto_passivo[0];
-                        $nome_effetto = $effetto_passivo[1];
-
-                        echo "<td class='effetto-container'>
-                                <img src='" . $icona_effetto . "' class='effetto-image'>
-                                <p class='weapon-name'>" . $nome_effetto . "</p>
-                                </td>";
-                    } else {
-                        // echo "<td><img src='../img/EffettiStato/null.png'></td>";
-                        echo "<td><b>-</b></td>";
-                    }
-                    echo "<td class='ottenimento'><p>" . $row["ottenimento"] . "</p></td>
-                        </tr>";
-                }
-            } else {
-                echo "<tr><td colspan='10'><img src='../img/error-404.jpg'>No data found.</td></tr>";
+    <div class="weapons-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 20px; padding: 20px;">
+        <?php
+        if (isset($errorMessage)) {
+            echo "<div class='error-message'><img src='../img/error-404.jpg'><br>" . $errorMessage . "</div>";
+        } elseif (count($result) > 0) {
+            foreach ($result as $row) {
+                echo "<div class='weapon-card' style='background-color: rgba(0, 0, 0, 0.7); border-radius: 10px; padding: 15px; text-align: center; cursor: pointer;' onclick='window.location.href=\"weapon_details.php?id=" . $row['id'] . "\"'>
+                        <img src='" . $row['immagine'] . "' class='weapon-image' style='width: 100%; height: auto; border-radius: 5px;'>
+                        <h3 style='color: #fff; margin: 10px 0;'>" . $row['nome_arma'] . "</h3>
+                        <p style='color: #ccc;'>" . $row['categoria'] . "</p>
+                    </div>";
             }
-            ?>
-            </tbody>
-        </table>
+        } else {
+            echo "<div class='error-message'><img src='../img/error-404.jpg'><br>No data found.</div>";
+        }
+        ?>
     </div>
 
     <div class="pagination">
@@ -266,7 +190,6 @@ try {
         }
         ?>
     </div>
-
 </main>
 
 <footer>
