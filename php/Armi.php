@@ -100,7 +100,7 @@ try {
     </div>
 </header>
 
-<main class="sfondo"><h1 align="center" class="titolo" style="padding-top: 1.5%;">Armi</h1>
+<main class="sfondo"><h1 align="center" class="titolo" style="padding-top: 1.5%;">Weapons</h1>
 
     <div class="contenitoreFiltro">
         <?php if ($_SESSION['isAdmin']): ?>
